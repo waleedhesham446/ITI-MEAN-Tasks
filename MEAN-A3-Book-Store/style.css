@@ -1,0 +1,113 @@
+body{
+    font-family: 'Arvo', serif;
+}
+
+header{
+    background-color: #941b28;
+    padding: 20px;
+}
+
+h1{
+    width: fit-content;
+    margin: auto;
+    padding-bottom: 10px;
+    color: #ececec;
+    box-shadow: 0 5px 0 0 #ececec;
+}
+
+h2, h3, h5 span{
+    color: #941b28;
+}
+
+main{
+    background-color: #d3d3d3;
+    padding: 10px;
+    margin-top: 20px;
+    min-height: calc(100vh - 150px);
+}
+
+.inputFields::before{
+    content: "";
+    background-color: #941b28;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+}
+
+.inputFields{
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.booksList{
+    padding-top: 25px;
+}
+
+input[type="text"]{
+    height: 3em;
+    background-color: #ececec;
+    border: 2px solid #949494;
+    border-radius: 5px;
+    margin: 10px 20px;
+}
+
+input[type="text"]:focus{
+    outline: none;
+    border-color: #565656;
+}
+
+button{
+    height: 3em;
+    font-size: 1.1em;
+    outline: none;
+    border: 2px solid #565656;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: #565656;
+    outline: none;
+    color: white;
+}
+
+h5 a{
+    text-decoration: none;
+    color: black;
+}
+
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+li{
+    width: 30%;
+    background-color: #eee;
+    list-style: none;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-shadow: 0 8px 30px -10px black;
+}
+
+li img{
+    max-height: 275px;
+}
+
+li label{
+    color: #5cdb95;
+    display: none;
+}
+
+li *{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.checkbox:checked + label{
+    display: inline-block;
+}

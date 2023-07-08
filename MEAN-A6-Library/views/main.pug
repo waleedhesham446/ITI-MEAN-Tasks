@@ -1,0 +1,40 @@
+doctype html
+html(lang="en")
+  head
+    title= Liberary
+    script(type='text/javascript').
+      
+    link(rel='stylesheet', href='/style.css')
+  body
+    header
+        h1 Amazon Book Store
+    
+
+    main
+        section.inputFields
+            h2 Add New Book
+            form(action="/add" method="POST")
+                input(type="text" name="title" id="bookName" placeholder="Enter The Name Of The Book" required)
+                input(type="text" name="author" id="authorName" placeholder="Enter The Name Of The Author" required)
+                input(type="text" name="coverURL" id="coverLink" placeholder="Enter The Link Of The Cover" required)
+                button Add New Book
+
+        section.booksList
+        h2 Books List
+        
+        ul
+            each item in books
+                li
+                    - var ch = item.checked;
+                    form(action="/toggle" method="POST")
+                        input(type="checkbox" class="checkbox" checked=item.checked name="state" onchange="this.form.submit()")
+                        label DONE
+                        input(value=item.ID hidden name="id")
+                        h3 #{item.book.title}
+                        h5
+                            span Author: 
+                            a(href="#" title="Go to the author") #{item.book.author}
+
+                        figure
+                            a(href="#" title="Read the book")
+                                img(src=item.book.coverURL alt="Book Cover")
